@@ -2,7 +2,7 @@
 The rapid development of quantum computers has raised concerns about computer security, especially those public-key cryptographies that are currently in use, which are inevitably subject to quantum attacks, assuming that large scale quantum computers will be built. While most current symmetric cryptographic algorithms are considered to be relatively secure against attacks by quantum computers, the problem with public-key cryptographies is that they rely heavily on three hard mathematical problems: the integer factorization problem, the discrete logarithm problem, and the elliptic-curve problem.
 
 ## Quantum Algorithms
-The Quantum Fourier Transform algorithms can be implemented on quantum computer using only polynomial number of quantum gates, also called the 'quantum killer app', which breaks public-key cryptographies in polynomial time (i.e. Shor's Algorithm against RSA [8], ECC [9] and DSA [6]).
+The Quantum Fourier Transform algorithms can be implemented on quantum computer using only polynomial number of quantum gates, also called the 'quantum killer app', which breaks public-key cryptographies in polynomial time (i.e. Shor's Algorithm against RSA, ECC and DSA).
 The amplitude amplification based algorithms, allow amplification of a chosen subspace of a quantum state, one such example is the Grover's Algorithm [7], which provides a quadratic speedup attack against symmetric ciphers. However, doubling the key length may prevent such brute force method from succeeding.
 
 The above table provided by the National Institute of Standards and Technology (NIST) gives a suggestion of the security levels of current popular cryptographic algorithms at a post-quantum scenario. 
@@ -10,12 +10,10 @@ There five major candidates of post-quantum cryptographies, and we will discuss 
 
 
 ## Lattice Based Cryptography
-\hspace{5mm}The theory of lattice-based cryptography is essentially hiding a point in a high-dimensional lattice $mod$ $q$ by making small changes to all coordinates, the time complexity to such problem is sub-exponential. 
-\par
-In the 1990s, Hoffstein, Pipher, and Silverman [11] introduced an encryption system “NTRU” that remains unbroken today. This system works as follows.
-\par
+The theory of lattice-based cryptography is essentially hiding a point in a high-dimensional lattice $mod$ $q$ by making small changes to all coordinates, the time complexity to such problem is sub-exponential.
+In the 1990s, Hoffstein, Pipher, and Silverman introduced an encryption system “NTRU” that remains unbroken today. This system works as follows.
 The public key is a $p$-coefficient polynomial
-\[h= h_0+h_1x+\dots+h_{p-1}x^{p-1},\]
+$$ h= h_0+h_1x+\dots+h_{p-1}x^{p-1}, $$
 with each coefficient in the set $\{0,1,\dots,q-1\}$. 
 A typical choice is $p = 743$ and $q = 2048 = 211$, then the public key has $743\cdot11=8173$ bits.
 A ciphertext is another polynomial $c$ in the same range. The sender chooses two secret polynomials $\{d, e\}$ with small (i.e. -1, 0, or 1) coefficients, and computes $c = hd +7e$ $(mod$ $x^p-1$ $(mod$ $q$)). The notation $(mod$ $x^p-1)$ means that $x^p$ is replaced by 1, $x^p+1$ is replaced by $x$, and the notation $(mod$ $q)$ means that each coefficient is replaced by its remainder divided by $q$. 
