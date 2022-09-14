@@ -48,7 +48,7 @@ $n \times k$
 matrix
 $T = AS$,
 where the entries are computed modulo $q$. If $A$ is not shared then it is also part of the public key.
-\par
+
 The system uses a hash function 
 \[H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k,\] where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete
 Gaussian distribution, then computes
@@ -62,8 +62,6 @@ The signature is accepted as valid if $c$ and $z$ are sufficiently small and if
 \[H(Az-Tc \; mod \; q, \mu) = c,\] 
 the latter holds for valid signatures because
 \[Az-Tc \equiv A(Sc+y)-ASc \equiv Ay \; mod \;q.\]
-\par
-Proposals such as BLISS [16] improve the running time by reducing the frequency of rejection in the last step, and a ring version with $k=n$ and $m=2n$ signs in under half a millisecond and is verified about 10 times faster.
 
 
 ## Supersingular Isogeny
@@ -74,12 +72,7 @@ its related computational problems have exponential complexity.
 The Supersingular Isogeny Diffie-Hellman (SIDH) protocol [5] works in the quadratic extensions of large prime fields $\mathbb{F}_p$ with $p\equiv3$ $(mod$ $4)$, and the most convenient representation as $\mathbb{F}_{p^2} = \mathbb{F}_p(i)$ with $i^2 + 1 = 0$, for $u + iv$ where $u, v \in \mathbb{F}_p$.
 The $p^2$ elements in $\mathbb{F}_{p^2}$ has a subset of size $\floor*{\frac{p}{12}} + z$, where $z\in\{0, 1, 2\}$, the value of z depends on $p$ $(mod$ $12)$. 
 This is the set of supersingular $j$-invariants in $\mathbb{F}_{p^2}$. Here we will implement a toy example [2] with $p=431,$ and thus there are $\floor*{\frac{431}{12}}+2=37$ supersingular $j-$invariants in $\mathbb{F}_{p^2}$, as shown in Figure 2. The 37 $j$-invariants are all of the supersingular $j$-invariants in characteristic $p$, note that supersingular curves always have $j$-invariants in $\mathbb{F}_{p^2}$, and there are no more in higher extension fields.
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.55] {Fig5.PNG}
-	\caption{The set of $37$ supersingular $j$-invariants in $\mathbb{F}_{431^2}$.}
-	\label{fig1}
-\end{figure}\par
+
 For every elliptic curve, there exist a unique $j$-invariants, and two elliptic curves are isomorphic if and only if they have the same $j$-invariants.
 For example, the elliptic curves in Montgomery form [10]
 \[E_a: y^2=x^3+ax^2+x,\] 
