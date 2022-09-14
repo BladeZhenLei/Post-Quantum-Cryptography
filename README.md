@@ -142,12 +142,6 @@ The 3-isogeny graph is drawn analogously, but there are now four outgoing edges 
 Inputting the three other 3-torsion subgroups gives three image curves with $j = 19$, $j = 42i + 141$, and $j = 106i + 379$. 
 Again, working through each node gives Figure 4.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5] {Fig7.PNG}
-	\caption{The 3-isogeny graph for $p = 431$. The 37 nodes are the supersingular $j$-invariants and the edges between them correspond to 3-isogenies.}
-\end{figure}\par
-
 The SIDH typically take prime in the form
 \[p = 2^{e_A}3^{e_B}-1,\]
 with
@@ -162,36 +156,10 @@ and
 \[ S_B=P_B+[k_B]Q_B, \;\; [k_b]\in[0,3^{e_b}). \]
 \par
 We are not going through the full details of the state of the art SIDH protocol, but the key idea is that these isogenies can be used to generate the public and private keys (Figure 5, Figure 6, Figure 7 and Figure 8). The lack of any meaningful connection between Alice and Bob’s graphs is the heart of SIDH security.
-\end{section}
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.545] {Fig8.PNG}
-	\caption{Alice’s key generation starts at the public curve corresponding to $j =
-87i + 190$, her secret key is the isogeny $\phi_A = (\phi_3\cdot\phi_2\cdot\phi_1\cdot\phi_0)$, and the destination
-node $222i + 118$ becomes part of her public key.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5] {Fig9.PNG}
-	\caption{Bob’s key starts at the public curve corresponding to $j=87i+190$, his secret key is the isogeny $\phi_B= (\phi_2\cdot\phi_1\cdot\phi_0)$, and the destination node $344i+190$ becomes part of his public key.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5] {Fig10.PNG}
-	\caption{Alice’s secret key starts at the curve from Bob’s public key with $j = 344i + 190$, and uses her secret key to compute the walk to the node with $j = 234$.}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5] {Fig11.PNG}
-	\caption{Bob’s secret key starts at the curve from Alice’s public key with $j = 222i + 118$, and uses his secret key to compute the walk to the node with $j = 234$.}
-\end{figure}
-
-
-\begin{section}{Conclusion}
-\hspace{5mm}The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST) [1], 
+The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST) [1], 
 Although, currently, even the largest quantum computer is incapable of breaking any real cryptographic algorithm,  we should, however, prepare for the future when quantum computer does become a threat.
+
+
+<p/>
+<script type="text/javascript" charset="utf-8" src=" https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML, https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
