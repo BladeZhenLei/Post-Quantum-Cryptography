@@ -1,16 +1,15 @@
-The rapid development of quantum computers has raised concerns about computer security, especially those public-key cryptographies that are currently in use, which are inevitably subject to quantum attacks, assuming that large scale quantum computers will be built.
-\par
-While most current symmetric cryptographic algorithms are considered to be relatively secure against attacks by quantum computers, the problem with public-key cryptographies is that they rely heavily on three hard mathematical problems [3]: the integer factorization problem, the discrete logarithm problem, and the elliptic-curve problem.
-\par
+***
+The rapid development of quantum computers has raised concerns about computer security, especially those public-key cryptographies that are currently in use, which are inevitably subject to quantum attacks, assuming that large scale quantum computers will be built. While most current symmetric cryptographic algorithms are considered to be relatively secure against attacks by quantum computers, the problem with public-key cryptographies is that they rely heavily on three hard mathematical problems: the integer factorization problem, the discrete logarithm problem, and the elliptic-curve problem.
+
+## Quantum Algorithms
 The Quantum Fourier Transform algorithms can be implemented on quantum computer using only polynomial number of quantum gates, also called the 'quantum killer app', which breaks public-key cryptographies in polynomial time (i.e. Shor's Algorithm against RSA [8], ECC [9] and DSA [6]).
 The amplitude amplification based algorithms, allow amplification of a chosen subspace of a quantum state, one such example is the Grover's Algorithm [7], which provides a quadratic speedup attack against symmetric ciphers. However, doubling the key length may prevent such brute force method from succeeding.
 
-The above table (provided by the National Institute of Standards and Technology (NIST) [1]) gives a suggestion of the security levels of current popular cryptographic algorithms at a post-quantum scenario. 
+The above table provided by the National Institute of Standards and Technology (NIST) gives a suggestion of the security levels of current popular cryptographic algorithms at a post-quantum scenario. 
 There five major candidates of post-quantum cryptographies, and we will discuss two of them in details.
-\end{section}
 
 
-\begin{section}{Lattice Based Cryptography}
+## Lattice Based Cryptography
 \hspace{5mm}The theory of lattice-based cryptography is essentially hiding a point in a high-dimensional lattice $mod$ $q$ by making small changes to all coordinates, the time complexity to such problem is sub-exponential. 
 \par
 In the 1990s, Hoffstein, Pipher, and Silverman [11] introduced an encryption system “NTRU” that remains unbroken today. This system works as follows.
@@ -65,17 +64,9 @@ the latter holds for valid signatures because
 \[Az-Tc \equiv A(Sc+y)-ASc \equiv Ay \; mod \;q.\]
 \par
 Proposals such as BLISS [16] improve the running time by reducing the frequency of rejection in the last step, and a ring version with $k=n$ and $m=2n$ signs in under half a millisecond and is verified about 10 times faster.
-\par
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.35] {Fig1.PNG}
-	\caption{Perspective view of a $9\times9\times9$ subset of a non-orthogonal 3-dimensional lattice}
-	\label{fig1}
-\end{figure}
-\end{section}
 
 
-\begin{section}{Supersingular Isogeny}
+## Supersingular Isogeny
 \hspace{5mm}The number of elements of a finite field is called order, a finite field of order $q$ exists if and only if $q$ is a prime power $p^k$ (where $p$ is a prime number and $k$ is a positive integer). In a field of order $p^k$, adding $p$ copies of any element always results in zero, that is, the characteristic of the field is $p$. An elliptic curve is defined on finite field, either ordinary or supersingular. 
 The supersingular case provides easier construction, and all known quantum attacks against
 its related computational problems have exponential complexity.
