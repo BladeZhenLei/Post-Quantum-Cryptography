@@ -30,10 +30,7 @@ then
 $$cg\equiv3df+eg\;(mod\;x^p-1\;(mod\;q)).$$
 An analysis of coefficient sizes shows that $3df + eg$ almost certainly has all coefficients strictly between $-q/2$ and $q/2$, and then it is easy to find $\{d,e\}$ given $\{f,g\}$.
 
-The NTRU and similar lattice-based cryptosystems have attracted attacks. For example, recent the “cyclotomic” structure [12] of $x^p-1$ has been used to break some lattice-based cryptosystems by an extension of Shor’s algorithm. There are no known attacks exploiting cyclotomics in NTRU, but this attack avenue is new and has not been adequately explored. As another example, recent
-attacks [13] that work for arbitrary lattices, without exploiting any polynomial
-structure. Much more research is required to gain confidence in the security of lattice-based
-cryptographies [3].
+The NTRU and similar lattice-based cryptosystems have attracted attacks. For example, recent the “cyclotomic” structure [12] of $x^p-1$ has been used to break some lattice-based cryptosystems by an extension of Shor’s algorithm. There are no known attacks exploiting cyclotomics in NTRU, but this attack avenue is new and has not been adequately explored. As another example, recent attacks that work for arbitrary lattices, without exploiting any polynomial structure. Much more research is required to gain confidence in the security of lattice-based cryptographies.
 
 Attempts [14] to turn hard lattice problems into signature systems were marred by attacks and surviving systems have suffered from large signature sizes.
 The most successful signature systems are based on Lyubashevsky’s signature system [15] from 2012.
@@ -48,7 +45,7 @@ $T = AS$,
 where the entries are computed modulo $q$. If $A$ is not shared then it is also part of the public key.
 
 The system uses a hash function 
-$$ H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k, $$
+$$H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k,$$
 where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete
 Gaussian distribution, then computes
 \[c = H(Ay\;mod \; q, \mu),\]
@@ -61,7 +58,6 @@ The signature is accepted as valid if $c$ and $z$ are sufficiently small and if
 $$H(Az-Tc \; mod \; q, \mu) = c,$$
 the latter holds for valid signatures because
 $$Az-Tc \equiv A(Sc+y)-ASc \equiv Ay \; mod \;q.$$
-
 
 ## Supersingular Isogeny
 \hspace{5mm}The number of elements of a finite field is called order, a finite field of order $q$ exists if and only if $q$ is a prime power $p^k$ (where $p$ is a prime number and $k$ is a positive integer). In a field of order $p^k$, adding $p$ copies of any element always results in zero, that is, the characteristic of the field is $p$. An elliptic curve is defined on finite field, either ordinary or supersingular. 
@@ -131,10 +127,10 @@ Alice’s secrets will be isogenies of degree $2^{e_A}$, and Bob’s will be of 
 Similarly, Bob computes
 \[ {\langle P_B,Q_B \rangle}=E[3^{e_B}]\cong{\mathbb{Z}_{3^{e_B}}}\times{\mathbb{Z}_{3^{e_B}}}. \]
 This necessarily means $P_A$ and $Q_A$ both have order $2^{e_A}$ and PB and QB both have order $3^{e_B}$. In practice (e.g. in SIKE [8]), they will typically choose their secret generator points, SA and SB, by simply taking
-\[ S_A=P_A+[k_A]Q_A, \;\; [k_A]\in[0,2^{e_A}), \]
+$$ S_A=P_A+[k_A]Q_A, \;\; [k_A]\in[0,2^{e_A}), $$
 and
-\[ S_B=P_B+[k_B]Q_B, \;\; [k_b]\in[0,3^{e_b}). \]
-\par
+$$ S_B=P_B+[k_B]Q_B, \;\; [k_b]\in[0,3^{e_b}). $$
+
 We are not going through the full details of the state of the art SIDH protocol, but the key idea is that these isogenies can be used to generate the public and private keys (Figure 5, Figure 6, Figure 7 and Figure 8). The lack of any meaningful connection between Alice and Bob’s graphs is the heart of SIDH security.
 
 The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST) [1], 
