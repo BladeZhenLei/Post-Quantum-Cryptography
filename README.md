@@ -17,12 +17,12 @@ $$h= h_0+h_1x+\dots+h_{p-1}x^{p-1},$$
 with each coefficient in the set $\{0,1,\dots,q-1\}$. 
 A typical choice is $p = 743$ and $q = 2048 = 211$, then the public key has $743\cdot11=8173$ bits.
 A ciphertext is another polynomial $c$ in the same range. The sender chooses two secret polynomials $\{d, e\}$ with small (i.e. -1, 0, or 1) coefficients, and computes $c = hd +7e$ $(mod$ $x^p-1$ $(mod$ $q$)). The notation $(mod$ $x^p-1)$ means that $x^p$ is replaced by 1, $x^p+1$ is replaced by $x$, and the notation $(mod$ $q)$ means that each coefficient is replaced by its remainder divided by $q$. 
-\par
+
 Define $L$ as the set of pairs $(u, v)$ of $p$-coefficient polynomials with integer coefficients such that
-\[hu-v\equiv0\;(mod\;x^p-1\;(mod\;q)),\] 
+$$hu-v\equiv0\;(mod\;x^p-1\;(mod\;q)),$$
 then $L$ is a lattice in $2p$-dimensional space, and it contains a point close to $(0, c)$, namely $(d, c-e)$. 
 The attacker’s problem is therefore finding $\{d, e\}$ given the ciphertext $c$, and the public key $h$ is an example of finding a lattice point close to a given point. 
-\par
+
 NTRU secretly generates the public key in a way that makes decoding efficient. 
 Specifically, the receiver starts with a short vector of the form $(g, 3f)$, and uses a Euclidean algorithm to find $h$ such that the lattice contains this vector, i.e., such that 
 $$hg-3f\equiv0\;(mod\;x^p-1\;(mod\;q)),$$
@@ -34,7 +34,7 @@ The NTRU and similar lattice-based cryptosystems have attracted attacks. For exa
 attacks [13] that work for arbitrary lattices, without exploiting any polynomial
 structure. Much more research is required to gain confidence in the security of lattice-based
 cryptographies [3].
-\par
+
 Attempts [14] to turn hard lattice problems into signature systems were marred by attacks and surviving systems have suffered from large signature sizes.
 The most successful signature systems are based on Lyubashevsky’s signature system [15] from 2012.
 The system can be easily presented using integer matrices, usually with polynomial rings and fast Fourier transforms for compact representations. Lyubashevsky’s system uses several parameters, namely integers $\{k, m, n\}$ determining the sizes of matrices, $k$ limiting the Hamming weight of certain vectors, and $q$, a modulus.
@@ -66,7 +66,7 @@ the latter holds for valid signatures because
 \hspace{5mm}The number of elements of a finite field is called order, a finite field of order $q$ exists if and only if $q$ is a prime power $p^k$ (where $p$ is a prime number and $k$ is a positive integer). In a field of order $p^k$, adding $p$ copies of any element always results in zero, that is, the characteristic of the field is $p$. An elliptic curve is defined on finite field, either ordinary or supersingular. 
 The supersingular case provides easier construction, and all known quantum attacks against
 its related computational problems have exponential complexity.
-\par
+
 The Supersingular Isogeny Diffie-Hellman (SIDH) protocol [5] works in the quadratic extensions of large prime fields $\mathbb{F}_p$ with $p\equiv3$ $(mod$ $4)$, and the most convenient representation as $\mathbb{F}_{p^2} = \mathbb{F}_p(i)$ with $i^2 + 1 = 0$, for $u + iv$ where $u, v \in \mathbb{F}_p$.
 The $p^2$ elements in $\mathbb{F}_{p^2}$ has a subset of size $\floor*{\frac{p}{12}} + z$, where $z\in\{0, 1, 2\}$, the value of z depends on $p$ $(mod$ $12)$. 
 This is the set of supersingular $j$-invariants in $\mathbb{F}_{p^2}$. Here we will implement a toy example [2] with $p=431,$ and thus there are $\floor*{\frac{431}{12}}+2=37$ supersingular $j-$invariants in $\mathbb{F}_{p^2}$, as shown in Figure 2. The 37 $j$-invariants are all of the supersingular $j$-invariants in characteristic $p$, note that supersingular curves always have $j$-invariants in $\mathbb{F}_{p^2}$, and there are no more in higher extension fields.
@@ -94,12 +94,12 @@ Suppose $G = \{\mathcal{O},(\alpha, 0),(\frac{1}{\alpha}, 0),(0, 0)\}$, where $\
 This map can be used to compute 2-isogenies on any Montgomery curve. 
 For example, one of the curves we mentioned
 \[E_a: y^2=x^3+(208i+161)x^2+x,\]
-\[j(E_{a})={364i+304}.\]
+$$j(E_{a})={364i+304}.$$
 The point ($\alpha$, 0) $\in E_a$ with $\alpha = 350i + 68$ has order 2, then
-\[E_{a^{\prime}}: y^2=x^3+(102i+423)x^2+x\]
-\[j(E_{a^\prime})={344i+190}.\]
+$$E_{a^{\prime}}: y^2=x^3+(102i+423)x^2+x$$
+$$j(E_{a^\prime})={344i+190}.$$
 and the map
-\[\phi: x \rightarrow \frac{x((321i+56)x-1)^2}{(x-(321i+56))^2}\]
+$$\phi: x \rightarrow \frac{x((321i+56)x-1)^2}{(x-(321i+56))^2}$$
 will take any point not in (${\mathcal{O},(\alpha, 0)}$) to the corresponding point on $E_{a_0}$.
 
 The important notion is that when we introduce any other prime $l \neq p$ (i.e. p=431) this set becomes a graph with interestingly surprising properties.
@@ -111,16 +111,13 @@ $\{E_{a},j(E_{a})\} \rightarrow \{E_{a^{\prime}},j(E_{a^\prime})\},$
 we can draw an edge between these two $j$-invariants. There are two other kernels of 2-isogenies on $E_a$: one generated by ($\frac{1}{\alpha}, 0$) and the other generated by ($0, 0$). These produce two more edges, one connecting $j=364i+304$ to $j=67$ and one connecting $j=364i+304$ to $j=319$.
 We can visit every $j$-invariant in the graph until
 all three 2-torsion points have been used, depicted in Figure 3.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.425] {Fig6.PNG}
-	\caption{The 2-isogeny graph for $p = 431$, the edges correspond to 2-isogenies.}
-\end{figure}\par
+
+
 Observe that, for all $j \notin \{0, 4, 242\}$, there are exactly 3 edges connecting a given node to other 2-isogenous $j$-invariants. 
-\par
+
 The 3-isogeny graph is drawn analogously, but there are now four outgoing edges corresponding to every $j$-invariant (exceptions for $j \in \{0, 4, 125, 242\}$). The point ($β\beta, \gamma$) = ($321i + 56, 303i + 174$) of order 3 on $E_a$ is the kernel of an isogeny to the curve 
-\[E_{a^{\prime}}: y^2=x^3+415x^2+x,\]
-\[j(E_{a^\prime})={189}.\]
+$$E_{a^{\prime}}: y^2=x^3+415x^2+x,$$
+$$j(E_{a^\prime})={189}.$$
 Inputting the three other 3-torsion subgroups gives three image curves with $j = 19$, $j = 42i + 141$, and $j = 106i + 379$. 
 Again, working through each node gives Figure 4.
 
