@@ -48,7 +48,8 @@ $T = AS$,
 where the entries are computed modulo $q$. If $A$ is not shared then it is also part of the public key.
 
 The system uses a hash function 
-\[H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k,\] where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete
+$$ H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k, $$
+where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete
 Gaussian distribution, then computes
 \[c = H(Ay\;mod \; q, \mu),\]
 where $\mu$ is the message,
@@ -57,9 +58,9 @@ The signature is the pair $\{c, z\}$.
 To avoid leaking information about the
 private key $S$ through the distribution of $\{c, z\}$, Lyubashevsky uses rejection sampling to force an $S$-independent distribution. This means that the process is restarted with probability depending on $\{c, z\}$.
 The signature is accepted as valid if $c$ and $z$ are sufficiently small and if
-\[H(Az-Tc \; mod \; q, \mu) = c,\] 
+$$H(Az-Tc \; mod \; q, \mu) = c,$$
 the latter holds for valid signatures because
-\[Az-Tc \equiv A(Sc+y)-ASc \equiv Ay \; mod \;q.\]
+$$Az-Tc \equiv A(Sc+y)-ASc \equiv Ay \; mod \;q.$$
 
 
 ## Supersingular Isogeny
@@ -73,15 +74,15 @@ This is the set of supersingular $j$-invariants in $\mathbb{F}_{p^2}$. Here we w
 
 For every elliptic curve, there exist a unique $j$-invariants, and two elliptic curves are isomorphic if and only if they have the same $j$-invariants.
 For example, the elliptic curves in Montgomery form [10]
-\[E_a: y^2=x^3+ax^2+x,\] 
+$$E_a: y^2=x^3+ax^2+x,$$
 have the $j-invariant$
-\[j(E_a): \frac{256(a^2-3)^3}{a^2-4}.\]
+$$j(E_a): \frac{256(a^2-3)^3}{a^2-4}.$$
 Let $a_1=208i+161$ and $a_2=172i+162$, then $j(E_1)=j(E_2)=364i+302$, and
-\[E_{a_1}: y^2=x^3+(208i+161)x^2+x,\]
-\[E_{a_2}: y^2=x^3+(172i+162)x^2+x.\]
+$$E_{a_1}: y^2=x^3+(208i+161)x^2+x,$$
+$$E_{a_2}: y^2=x^3+(172i+162)x^2+x.$$
 Therefore $E_{a_1}$ and $E_{a_2}$ are isomorphic, and correspond to the leftmost $j-invariant$ shown in Figure 4. The isomorphisms are
-\[\psi: E_{a_1} \rightarrow E_{a_2}=(x,y) \rightarrow ((66i+182)x,(300i+109),(122i+159)y)\]
-\[\psi^{-1}: E_{a_2} \rightarrow E_{a_1}=(x,y) \rightarrow ((156i+40)x,(304i+202),(419i+270)y)\]
+$$\psi: E_{a_1} \rightarrow E_{a_2}=(x,y) \rightarrow ((66i+182)x,(300i+109),(122i+159)y)$$
+$$\psi^{-1}: E_{a_2} \rightarrow E_{a_1}=(x,y) \rightarrow ((156i+40)x,(304i+202),(419i+270)y)$$
 
 In general, an isogeny is a map
 \[\phi: E \rightarrow E^{\prime}\]
