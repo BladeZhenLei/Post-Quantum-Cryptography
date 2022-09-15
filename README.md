@@ -85,13 +85,13 @@ $$\psi: E_{a_1} \rightarrow E_{a_2}=(x,y) \rightarrow ((66i+182)x,(300i+109),(12
 $$\psi^{-1}: E_{a_2} \rightarrow E_{a_1}=(x,y) \rightarrow ((156i+40)x,(304i+202),(419i+270)y)$$
 
 In general, an isogeny is a map
-\[\phi: E \rightarrow E^{\prime}\]
+$$\phi: E \rightarrow E^{\prime}$$
 from one elliptic curve to another. Isogenies are said to be either separable or inseparable, the key is that separable isogenies are in one-to-one correspondence with finite subgroups: every subgroup $G$ of points on an elliptic curve $E$ gives rise to a unique isogeny. 
-\par
+
 Suppose $G = \{\mathcal{O},(\alpha, 0),(\frac{1}{\alpha}, 0),(0, 0)\}$, where $\mathcal{O}$ is the identity element, and
-\[\phi: E_a \rightarrow E_{a^{\prime}},\]
-\[x \rightarrow \frac{x(x\alpha-1)}{(x-\alpha)},\]
-\[a^{\prime}=2(1-2\alpha^2).\]
+$$\phi: E_a \rightarrow E_{a^{\prime}},$$
+$$x \rightarrow \frac{x(x\alpha-1)}{(x-\alpha)},$$
+$$a^{\prime}=2(1-2\alpha^2).$$
 This map can be used to compute 2-isogenies on any Montgomery curve. 
 For example, one of the curves we mentioned
 \[E_a: y^2=x^3+(208i+161)x^2+x,\]
