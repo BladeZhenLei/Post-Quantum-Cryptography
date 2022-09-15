@@ -46,9 +46,8 @@ where the entries are computed modulo $q$. If $A$ is not shared then it is also 
 
 The system uses a hash function 
 $$H: \mathbb{Z}_q^n\times\{-1,0,1\}^*\rightarrow\{1,0\}^k,$$
-where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete
-Gaussian distribution, then computes
-\[c = H(Ay\;mod \; q, \mu),\]
+where the output vectors satisfy that no more than $k$ entries are non-zero. The signer starts by picking $y$ from an $m$-dimensional distribution, typically a discrete Gaussian distribution, then computes 
+$$c = H(Ay\;mod \; q, \mu),$$
 where $\mu$ is the message,
 and $z = Sc + y$. 
 The signature is the pair $\{c, z\}$. 
@@ -125,7 +124,7 @@ with
 Alice’s secrets will be isogenies of degree $2^{e_A}$, and Bob’s will be of degree $3^{e_B}$. Alice will compute generators of her secret subgroups by computing secret linear combinations of two public basis points, where
 \[ {\langle P_A,Q_A \rangle}=E[2^{e_A}]\cong{\mathbb{Z}_{2^{e_A}}}\times{\mathbb{Z}_{2^{e_A}}}. \]
 Similarly, Bob computes
-\[ {\langle P_B,Q_B \rangle}=E[3^{e_B}]\cong{\mathbb{Z}_{3^{e_B}}}\times{\mathbb{Z}_{3^{e_B}}}. \]
+$${\langle P_B,Q_B \rangle}=E[3^{e_B}]\cong{\mathbb{Z}_{3^{e_B}}}\times{\mathbb{Z}_{3^{e_B}}}.$$
 This necessarily means $P_A$ and $Q_A$ both have order $2^{e_A}$ and PB and QB both have order $3^{e_B}$. In practice (e.g. in SIKE [8]), they will typically choose their secret generator points, SA and SB, by simply taking
 $$ S_A=P_A+[k_A]Q_A, \;\; [k_A]\in[0,2^{e_A}), $$
 and
@@ -133,6 +132,7 @@ $$ S_B=P_B+[k_B]Q_B, \;\; [k_b]\in[0,3^{e_b}). $$
 
 We are not going through the full details of the state of the art SIDH protocol, but the key idea is that these isogenies can be used to generate the public and private keys (Figure 5, Figure 6, Figure 7 and Figure 8). The lack of any meaningful connection between Alice and Bob’s graphs is the heart of SIDH security.
 
+## Conclusion
 The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST) [1], 
 Although, currently, even the largest quantum computer is incapable of breaking any real cryptographic algorithm,  we should, however, prepare for the future when quantum computer does become a threat.
 
