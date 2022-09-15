@@ -25,11 +25,11 @@ The attacker’s problem is therefore finding $\{d, e\}$ given the ciphertext $c
 \par
 NTRU secretly generates the public key in a way that makes decoding efficient. 
 Specifically, the receiver starts with a short vector of the form $(g, 3f)$, and uses a Euclidean algorithm to find $h$ such that the lattice contains this vector, i.e., such that 
-\[hg-3f\equiv0\;(mod\;x^p-1\;(mod\;q)),\] 
+$$hg-3f\equiv0\;(mod\;x^p-1\;(mod\;q)),$$
 then
-\[cg\equiv3df+eg\;(mod\;x^p-1\;(mod\;q)).\]
+$$cg\equiv3df+eg\;(mod\;x^p-1\;(mod\;q)).$$
 An analysis of coefficient sizes shows that $3df + eg$ almost certainly has all coefficients strictly between $-q/2$ and $q/2$, and then it is easy to find $\{d,e\}$ given $\{f,g\}$.
-\par
+
 The NTRU and similar lattice-based cryptosystems have attracted attacks. For example, recent the “cyclotomic” structure [12] of $x^p-1$ has been used to break some lattice-based cryptosystems by an extension of Shor’s algorithm. There are no known attacks exploiting cyclotomics in NTRU, but this attack avenue is new and has not been adequately explored. As another example, recent
 attacks [13] that work for arbitrary lattices, without exploiting any polynomial
 structure. Much more research is required to gain confidence in the security of lattice-based
