@@ -14,7 +14,7 @@ The theory of lattice-based cryptography is essentially hiding a point in a high
 In the 1990s, Hoffstein, Pipher, and Silverman introduced an encryption system “NTRU” that remains unbroken today. This system works as follows.
 The public key is a $p$-coefficient polynomial
 $$h= h_0+h_1x+\dots+h_{p-1}x^{p-1},$$
-with each coefficient in the set $\{0,1,\dots,q-1\}$. 
+with each coefficient in the set $\lbrace{0,1,\dots,q-1\rbrace}$. 
 A typical choice is $p = 743$ and $q = 2048 = 211$, then the public key has $743\cdot11=8173$ bits.
 A ciphertext is another polynomial $c$ in the same range. The sender chooses two secret polynomials $\{d, e\}$ with small (i.e. -1, 0, or 1) coefficients, and computes $c = hd +7e$ $(mod$ $x^p-1$ $(mod$ $q$)). The notation $(mod$ $x^p-1)$ means that $x^p$ is replaced by 1, $x^p+1$ is replaced by $x$, and the notation $(mod$ $q)$ means that each coefficient is replaced by its remainder divided by $q$. 
 
