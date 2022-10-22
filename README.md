@@ -3,10 +3,7 @@ The rapid development of quantum computers has raised concerns about computer se
 
 ## Quantum Algorithms
 The Quantum Fourier Transform algorithms can be implemented on quantum computer using only polynomial number of quantum gates, also called the 'quantum killer app', which breaks public-key cryptographies in polynomial time (i.e. Shor's Algorithm against RSA, ECC and DSA).
-The amplitude amplification based algorithms, allow amplification of a chosen subspace of a quantum state, one such example is the Grover's Algorithm [7], which provides a quadratic speedup attack against symmetric ciphers. However, doubling the key length may prevent such brute force method from succeeding.
-
-The above table provided by the National Institute of Standards and Technology (NIST) gives a suggestion of the security levels of current popular cryptographic algorithms at a post-quantum scenario. 
-There five major candidates of post-quantum cryptographies, and we will discuss two of them in details.
+The amplitude amplification based algorithms, allow amplification of a chosen subspace of a quantum state, one such example is the Grover's Algorithm, which provides a quadratic speedup attack against symmetric ciphers. However, doubling the key length may prevent such brute force method from succeeding.
 
 
 ## Lattice Based Cryptography
