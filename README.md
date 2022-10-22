@@ -130,7 +130,7 @@ $$ S_B=P_B+[k_B]Q_B, \;\; [k_b]\in[0,3^{e_b}). $$
 We are not going through the full details of the state of the art SIDH protocol, but the key idea is that these isogenies can be used to generate the public and private keys (Figure 5, Figure 6, Figure 7 and Figure 8). The lack of any meaningful connection between Alice and Bob’s graphs is the heart of SIDH security.
 
 ## Conclusion
-The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST) [1], 
+The field of post-quantum cryptography is an ongoing research subject and of great ineterest for scientists. Other possible directions to construct post-quantum level cryptographies include Multivariate, Code-Based, and Hash-Based Cryptographies, where no known classical/quantum algorithm can easily solve. However, none of the above was accepted by the National Institute of Standards and Technology (NIST).
 Although, currently, even the largest quantum computer is incapable of breaking any real cryptographic algorithm,  we should, however, prepare for the future when quantum computer does become a threat.
 
 
